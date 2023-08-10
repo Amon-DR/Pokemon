@@ -3,24 +3,24 @@ import { PokeyContent } from "@/utils/content-pokey"
 import pok from "@/public/img/background-ob.jpg"
 import Image from "next/image"
 import useSWR from "swr"
-import { useEffect,useState } from "react"
+import { useEffect, useState } from "react"
 
-export default function Pokey(props) {
+export default function Pokey() {
+    let count = 0
     const basedata = [1, 2, 3, 4, 5, 6, 7]
     const content = PokeyContent()
-    const fetcher = (...args) => fetch(...args).then(res => res.json())
+    const fetcher = (...args: Parameters<typeof fetch>) => fetch(...args).then(res => res.json())
     const [toggled, setToggled] = useState(false)
     let { data, error, isLoading } = useSWR("http://localhost:3000/data", fetcher)
 
 
-const randomPokemon = basedata.map((count = 0) => {
-   
+    const randomPokemon = basedata.map((count = 0) => {
         return (
             <div className="api-pokemon pause" id={"api-poke-" + count}>
                 <Image src={content.img_card} alt="" />
                 <h3>Pokemon</h3>
             </div>
-        ) 
+        )
         count++
     })
 
@@ -37,6 +37,8 @@ const randomPokemon = basedata.map((count = 0) => {
 
     return (
         <section className="pokey-main">
+        {/* {isLoading? <p>Loading...</p> :
+        <h1>{<img src={"" + data[0].sprites.other["official-artwork"].front_default} alt="" />}</h1>} */}
             <video className="pokey-video" autoPlay loop muted>
                 <source src="./media/Circle4872.mp4" type="video/mp4" />
             </video>
@@ -73,26 +75,25 @@ const randomPokemon = basedata.map((count = 0) => {
                 <section className="pokey-gallery">
 
                     {isLoading ?
-randomPokemon
+                        randomPokemon
                         :
-                        data !== "error"?
-                        data.map((element, count = 0) => {
-                            count++
-                                 return (
-                                     <div className="api-pokemon pause" id={"api-poke-" + count}>
-                                         <Image
-                                             src={ "" + data[count-1].sprites.other["official-artwork"].front_default}
-                                             width={100}
-                                             height={100}
-                                             alt="" />
-                                         <h1>{element.name}</h1>
-                                     </div>
-                                 )
-                                 count++
-                             })
-                        :
-randomPokemon
-                        
+                        data !== "error" ?
+                            data.map(() => {
+                                count++
+                                return (
+                                    <div className="api-pokemon pause" id={"api-poke-" + (count)}>
+                                        <Image
+                                            src={"" + data[count - 1].sprites.other["official-artwork"].front_default}
+                                            width={100}
+                                            height={100}
+                                            alt="" />
+                                        <h1>{data[count - 1].name}</h1>
+                                    </div>
+                                )
+                            })
+                            :
+                            randomPokemon
+
                     }
                 </section>
 

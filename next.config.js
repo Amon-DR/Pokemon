@@ -8,7 +8,5 @@ module.exports = {
     domains: ['raw.githubusercontent.com'],    
     formats: ['image/avif', 'image/webp'],
   },
-  eslint:{
-    ignoreDuringBuilds: true
-  }
+
 }
