@@ -10,7 +10,7 @@
   font-family: navbar;
 }
 .bg-img-1 {
-  background: url("../public/img/background-ob.jpg"), rgba(0, 0, 0, 0.3);
+  background: url("../public/img/background-ob.jpg"), rgba(0, 0, 0, 0.1);
   background-size: 100% 200%;
   background-repeat: no-repeat;
   width: 100%;

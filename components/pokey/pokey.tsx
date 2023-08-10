@@ -1,6 +1,5 @@
 "use client"
 import { PokeyContent } from "@/utils/content-pokey"
-import pok from "@/public/img/background-ob.jpg"
 import Image from "next/image"
 import useSWR from "swr"
 import { useEffect, useState } from "react"
@@ -43,7 +42,7 @@ export default function Pokey() {
     return (
         <section className="pokey-main">
             <video className="pokey-video" autoPlay loop muted>
-                <source src="./media/Circle4872.mp4" type="video/mp4" />
+                <source src="../media/Circle4872.mp4" type="video/mp4" />
             </video>
 
             <div className="pokemon_details_trans pokemon_details_trans_js">
@@ -97,7 +96,7 @@ export default function Pokey() {
                                 count++
                                 return (
                                     <div className="api-pokemon pause" id={"api-poke-" + (count)}>
-                                        <Image
+                                        <img
                                             src={"" + data[count - 1].sprites.other["official-artwork"].front_default}
                                             width={100}
                                             height={100}
