@@ -78,7 +78,7 @@ export default function Pokey() {
                         randomPokemon
                         :
                         data !== "error" ?
-                            data.map(() => {
+                            data?.map(() => {
                                 count++
                                 return (
                                     <div className="api-pokemon pause" id={"api-poke-" + (count)}>
