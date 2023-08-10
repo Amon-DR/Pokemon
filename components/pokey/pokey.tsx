@@ -40,7 +40,7 @@ export default function Pokey() {
         {/* {isLoading? <p>Loading...</p> :
         <h1>{<img src={"" + data[0].sprites.other["official-artwork"].front_default} alt="" />}</h1>} */}
             <video className="pokey-video" autoPlay loop muted>
-                <source src="./media/Circle4872.mp4" type="video/mp4" />
+                <source src="@/media/Circle4872.mp4" type="video/mp4" />
             </video>
 
             <div className="pokemon_details_trans pokemon_details_trans_js">
