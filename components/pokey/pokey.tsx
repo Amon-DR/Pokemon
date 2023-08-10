@@ -8,13 +8,12 @@ export default function Pokey() {
     const safe = {
         data: null
     }
-    let shouldFetch = true
     let count = 0
     const basedata = [1, 2, 3, 4, 5, 6, 7]
     const content = PokeyContent()
     const fetcher = (...args: Parameters<typeof fetch>) => fetch(...args).then(res => res.json())
     const [toggled, setToggled] = useState(false)
-    let { data, error, isLoading } = useSWR(shouldFetch ?"/data":null, fetcher)
+    let { data, error, isLoading } = useSWR("/data", fetcher)
 
 
     const randomPokemon = basedata.map((count = 0) => {
@@ -82,7 +81,6 @@ export default function Pokey() {
                         data === "error" || data == null ?
                         basedata.map((count = 0) => {
                             isLoading = false
-                            shouldFetch = false
                             return (
                                 <div className="api-pokemon pause" id={"api-poke-" + count}>
                                     <Image src={content.img_card} alt="" />
