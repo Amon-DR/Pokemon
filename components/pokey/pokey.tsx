@@ -122,8 +122,11 @@ export default function Pokey() {
                                         key={count}
                                         data-card={count}
                                         className={toggled ? "api-pokemon" : "api-pokemon id pause"} id={"api-poke-" + (count)
-                                        } onClick={(event) => {
-                                            setShouldFetch(event.target.offsetParent.id.split("-")[2])
+                                        } onClick={(event:any) => {
+
+                                            const targetData = event.target.offsetParent.id.split("-")[2]
+
+                                            setShouldFetch(targetData)
                                             handleToggle()
 
                                         }}>
