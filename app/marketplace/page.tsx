@@ -1,5 +1,5 @@
-import InfoSection from "@/components/infoSection/infoSection"
-export default function Contact(){
+import InfoSection from "@/components/infoSection/InfoSection"
+export default function Marketplace(){
     return(
         <section>
             <InfoSection/>

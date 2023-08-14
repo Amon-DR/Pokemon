@@ -1,4 +1,4 @@
-export default function Contact(){
+export default function Resources(){
     return(
         <div>
             <h1>Resources</h1>
