@@ -6,7 +6,12 @@ import { Canvas, useFrame } from "react-three-fiber"
 import { OrbitControls, Preload } from "@react-three/drei"
 import { Suspense, useEffect, useState } from "react"
 
-
+type GLTFResult = GLTF & {
+    nodes: {
+        Barytes1: THREE.Mesh;
+    };
+    materials: {};
+};
 
 export default function Model() {
 
@@ -43,12 +48,12 @@ export default function Model() {
 }
 
 
-function Models(props) {
-    const { nodes, materials } = useGLTF("/canvas/Barytes.glb");
-    const myMesh = useRef();
-    useFrame(({ clock}) => {
-        myMesh.current.position.y = Math.sin(clock.getElapsedTime())
-      })
+function Models(props: JSX.IntrinsicElements["group"]) {
+    const { nodes, materials } = useGLTF("/canvas/Barytes.glb") as GLTFResult;
+    // const myMesh = useRef();
+    // useFrame(({ clock}) => {
+    //     myMesh.current.position.y = Math.sin(clock.getElapsedTime())
+    //   })
     //   useFrame(({ clock }) => {
     //      myMesh.current.rotation.y = Math.sin(clock.getElapsedTime());
     //     ;
@@ -57,7 +62,7 @@ function Models(props) {
         <group {...props} dispose={null}>
 
             <mesh 
-            ref={myMesh}
+            // ref={myMesh}
                 castShadow
                 receiveShadow
                 geometry={nodes.Barytes1.geometry}
