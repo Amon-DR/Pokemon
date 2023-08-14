@@ -7,7 +7,7 @@ import { Suspense, useEffect, useState } from "react"
 
 
 
-export default function HomeHeadSection() {
+export default function InfoSection() {
   // function MyRotatingBox() {
   //   const myMesh = React.useRef();
 

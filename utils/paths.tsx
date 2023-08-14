@@ -5,11 +5,11 @@ export default function paths() {
             name: "Home",
         },
         {
-            path: "/Marketplace",
+            path: "/marketplace",
             name: "Marketplace",
         },
         {
-            path: "/Resources",
+            path: "/resources",
             name: "Resources",
         },
 

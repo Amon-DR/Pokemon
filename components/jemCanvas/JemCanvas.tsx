@@ -50,8 +50,10 @@ export default function Model() {
 
 function Models(props: JSX.IntrinsicElements["group"]) {
     const { nodes, materials } = useGLTF("/canvas/Barytes.glb") as GLTFResult;
-    const ref = useRef();
-
+    const myMesh = useRef();
+    useFrame(({ clock }) => {
+        myMesh.current.position.y = Math.sin(clock.getElapsedTime())
+      })
     //   useFrame(({ clock }) => {
     //      myMesh.current.rotation.y = Math.sin(clock.getElapsedTime());
     //     ;
@@ -59,7 +61,8 @@ function Models(props: JSX.IntrinsicElements["group"]) {
     return (
         <group {...props} dispose={null}>
 
-            <mesh
+            <mesh 
+            ref={myMesh}
                 castShadow
                 receiveShadow
                 geometry={nodes.Barytes1.geometry}
