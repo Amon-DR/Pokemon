@@ -4,7 +4,6 @@ export default function Contact(){
         <section>
             <InfoSection/>
             <h1>Marketplace</h1>
-
         </section>
     )
 }
