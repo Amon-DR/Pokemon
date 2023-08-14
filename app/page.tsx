@@ -1,11 +1,10 @@
-import Model from "../components/jemCanvas/JemCanvas"
-import Pokey from "@/components/pokey/Pokey"
 
+import Pokey from "@/components/pokey/pokey"
 
-export default function Home() {
-    return (
-        <div>            
-            <Pokey/>
-        </div>
+export default function Home(){
+    return(
+        <main>
+<Pokey/>
+        </main>
     )
 }

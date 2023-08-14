@@ -10,7 +10,9 @@ export default function Pokey() {
     let count = 0
     const basedata = [1, 2, 3, 4, 5, 6, 7]
     const content = PokeyContent()
-    const card = document.querySelectorAll(".id")
+    useEffect(() => {
+        const card = document.querySelectorAll(".id")
+      }, []);
     // React states
     const [toggled, setToggled] = useState(false)
     const [revalidate, setRevalidate] = useState(true)
