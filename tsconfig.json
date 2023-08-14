@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/pokey/pokey.tsx", "components/PokemonFactPage", "components/jemCanvas/JemCanvas.js"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "components/pokey/Pokey.tsx", "components/PokemonFactPage", "components/jemCanvas/JemCanvas.js"],
   "exclude": ["node_modules"]
 }
